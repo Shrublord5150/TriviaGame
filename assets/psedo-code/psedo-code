@@ -1,0 +1,119 @@
+Wireframe
+Link all created pages together
+Create a theme to get the questions/answers/picures for app
+Set up html/css
+    
+
+Start JavaScript
+    - define global variables
+        -var timer
+        -var incorrectAnswers
+        -var correctAnswers
+        -var questionDisplay = []; push chosen question here
+        -var picture display = []; push chosen picture here---win or lose
+        -Questions/answers/picture as object
+        -var audio *extra*
+
+    -create start function
+        -start button======on click
+            =display first question with all answer options
+            =start timer====30 sec count down?
+
+    --create a display question function
+
+    -create a start timer function
+
+    -create a stop timer function
+
+    -create a display picture function
+
+    -create controls
+        -on click event listener
+        -create win/lose if then conditions
+        -if win---congrats---display image---(set display timer)
+        -if lose---nice try...answer is...display image---(set display timer)
+        -*if unanswered===lose*
+    
+    -create a reset function
+
+    -add theme music button?
+        -start and stop button
+
+            -create a play audio function
+            *raven activity for help*
+
+    
+
+
+
+
+Trivia Game Questions and Answers
+    1. Which greek king was a student of Aristotle?
+        a. King Phillip II of Macedon
+        b. Cassander
+        c. Alexander the Great
+        d. Julius Caesar
+            Answer: c.
+
+    2. At which battle did the King Leonidas and 300 Spartans fight Xerxes I of Persia?
+        a. Battle of Platea
+        b. Battle of Red Cliffs
+        c. Siege of Ogrimmar
+        d. Battle of Thermoplyae
+            Answer: d.
+
+    3. Who wrote "The Art of War"?
+        a. Trajan
+        b. Napolean Bonaparte
+        c. Sun Tzu
+        d. Homer
+            Answer: c.
+
+    4. Who was the last pharaoh of Egypt?
+        a. King Tut
+        b. Cleopatra VII
+        c. Amenhotep III
+        d. Ptolemy XII
+            Answer: b.
+
+    5. This Roman wonder was constructed to house gladiatorial contests and other public spectacles.
+        a. The Aquaduct
+        b. The Colosseum
+        c. The Basilica
+        d. The Phalanx
+            Answer: b.
+
+    6. Who was known as the last of the "Five Good Emperers" of the Roman Empire?
+        a. Marcus Aurelius
+        b. Commodus 
+        c. Julius Caesar
+        d. Maximus Decimus Meridius
+            Answer: a.
+
+    7. Who was responsible for bringing England into what is known as "The Golden Age"?
+        a. Queen Elizabeth I
+        b. Henry Tutor VIII
+        c. Lucius Artorius Castus (King Arthur)
+        d. Jane Seymour
+            Answer: a.
+
+    8. Who created the largest Empire in the world (Pre-British Empire)?
+        a.Alexander the Great
+        b.Genghis Khan
+        c.Sargon of Akkad
+        d.Julius Caesar
+            Answer: b.
+
+    9. Who created the "Julian Calendar" composed of 365 days and 1 leap day every four years?
+        a. Plato
+        b. Augustus
+        c. Julius Caesar
+        d. Julius Augustus Tiberious
+            Answer: c.
+
+    10. Who was a Roman Slave and Gladiator that lead a vast and bloody revolt against the Roman Empire?
+        a. Spartacus
+        b. Nero
+        c. Maximus Decimus Meridius
+        d. William Wallace
+            Answer: a.
