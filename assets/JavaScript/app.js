@@ -275,9 +275,9 @@ drawPicture = function () {
     
 }
 
+// create a reset button
 
-
-// COnTROLS===========================================================
+// CONTROLS===========================================================
 // ===================================================================
 
 // Create on click function for user to choose an answer
