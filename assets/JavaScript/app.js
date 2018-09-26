@@ -243,20 +243,26 @@ function decrement() {
 
 drawPicture = function () {
 
-    
+    // get the picture that is associated with the correct answer via chaining
     $("#answers").html("<img src=" + response[randomQuestion].picture + ">");
 
-    var hidePicture = setTimeout(function () {
+    // create a setTimeout function to only display the image for a specific amount of time...
+    setTimeout(function () {
+
+        // clear the question display
         $("#questions").empty();
+
+        // clear the answer display
         $("#answers").empty();
         
-
+        // if the game is over just display the results
         if (incorrectAnswers + correctAnswers === response.length) {
             
             $("#questions").html("Game Over! Here's your results: ");
             $("#questions").append("<p>Number Correct: " + correctAnswers +"</p>");
             $("#questions").append("<p>Number Wrong: " + incorrectAnswers + "</p>");
 
+            // else draw a new question and answers and reset the the timer
         } else {
             
             chosenQuestion();
@@ -264,7 +270,7 @@ drawPicture = function () {
             startTimer();
         }
 
-
+        // display the image for 4 seconds
     }, 1000 * 4);
     
 }
@@ -316,7 +322,6 @@ $(document).on('click', '.answers', function () {
         
     //     // draw a new question
         drawPicture();
-        // chosenQuestion();
-        // chosenAnswers();
+      
     }
 });
