@@ -19,56 +19,67 @@ var response = [
         question: "Which greek king was a student of Aristotle?",
         answers: ["King Phillip II of Macedon", "Cassander", "Alexander the Great", "Julius Caesar"],
         correct: 2,
+        name: "Alexander the Great",
         picture: "assets/images/Alexander-the-Great.jpg",   
     }, {
         question: "At which battle did the King Leonidas and 300 Spartans fight Xerxes I of Persia?",
         answers: ["The Battle of Platea", "The Battle of Red Cliffs", "The Siege of Ogrimmar", "The Battle of Thermoplyae"],
         correct: 3,
+        name: "The Battle of Thermoplyae",
         picture: "assets/images/Thermopylae.jpg",
     }, {
         question: "Who wrote 'The Art of War'?",
         answers: ["Trajan", "Napolean Bonaparte", "Sun Tzu", "Homer"],
         correct: 2,
+        name: "Sun Tzu",
         picture: "assets/images/Sun-Tzu.jpeg",
     }, {
         question: "Who was the last pharaoh of Egypt?",
         answers: ["King Tut", "Cleopatra VII", "Amenhotep III", "Ptolemy XII"],
         correct: 1,
+        name: "Cleopatra VII",
         picture: "assets/images/Cleopatra.jpg"
     }, {
         question: "This Roman wonder was constructed to house gladiatorial contests and other public spectacles.",
         answers: ["The Aquaduct", "The Colosseum", "The Basilica", "The Phalanx"],
         correct: 1,
+        name: "The Colosseum",
         picture: "assets/images/Colosseum.jpg",
     }, {
         question: "Who was known as the last of the 'Five Good Emperers' of the Roman Empire?",
         answers: ["Marcus Aurelius", "Commodus", "Julius Caesar", "Maximus Decimus Meridius"],
         correct: 0,
+        name: "Marcus Aurelius",
         picture: "assets/images/Marcus-Aurelius.jpg",
     }, {
         question: "Who was responsible for bringing England into what is known as 'The Golden Age'?",
         answers: ["Queen Elizabeth I", "Henry Tutor VIII", "Lucius Artorius Castus (King Arthur)", "Jane Seymour"],
         correct: 0,
+        name: "Queen Elizabeth I",
         picture: "assets/images/Queen-Elizabeth.jpg",
     }, {
         question: "Who created the largest Empire in the world (Pre-British Empire)?",
         answers: ["Alexander the Great", "Genghis Khan", "Sargon of Akkad", "Julius Caesar"],
         correct: 1,
+        name: "Genghis Khan",
         picture: "assets/images/Genghis-Khan.jpg",
     }, {
         question: "Who created the 'Julian Calendar' composed of 365 days and 1 leap day every four years?",
         answers: ["Plato", "Augustus", "Julius Caesar", "Julius Augustus Tiberious"],
         correct: 2,
+        name: "Julius Caesar",
         picture: "assets/images/Julius-Caesar.jpg",
     }, {
         question: "Who was a Roman slave and gladiator that lead a vast and bloody revolt against the Roman Empire?",
         answers: ["Spartacus", "Nero", "Maximus Decimus Meridius", "William Wallace"],
         correct: 0,
+        name: "Spartacus",
         picture: "assets/images/Spartacus.png",
     }
     
 ]
 // Call them with chaining test============
+console.log(response);
 // console.log(response[3].question);
 // console.log("-------------------");
 // console.log(response[4].answers[1]);
@@ -102,6 +113,8 @@ chosenQuestion = function () {
 
     // Grab a ranodom question 
    randomQuestion = Math.floor(Math.random()*response.length);
+
+    
 
     // grab the randomQuestion string with chaining
    selectedQuestion = response[randomQuestion].question
@@ -213,8 +226,14 @@ function decrement() {
       //  stop the timer
       stopTimer();
 
-      //  Alert the user that time is up.
-      alert("Time Up!");
+    //   increase the incorrectAnswers
+        incorrectAnswers++
+
+        // Tell user they were wrong
+    $("#questions").html("<p>Sorry, but you ran out of time. The correct answer was " + response[randomQuestion].name + ".</p>");
+      
+        // Draw picture
+        drawPicture();
     }
   }
 
@@ -229,15 +248,14 @@ drawPicture = function () {
 
     var hidePicture = setTimeout(function () {
         $("#questions").empty();
-        $(".answers").empty();
         $("#answers").empty();
-        timer = 30;
+        
 
         if (incorrectAnswers + correctAnswers === response.length) {
-
+            
             $("#questions").html("Game Over! Here's your results: ");
-            $("#questions").append("Correct Answers: " + correctAnswers);
-            $("#questions").append(" Wrong Answers: " + incorrectAnswers);
+            $("#questions").append("<p>Number Correct: " + correctAnswers +"</p>");
+            $("#questions").append("<p>Number Wrong: " + incorrectAnswers + "</p>");
 
         } else {
             
@@ -247,7 +265,7 @@ drawPicture = function () {
         }
 
 
-    }, 1000 * 2);
+    }, 1000 * 4);
     
 }
 
@@ -293,7 +311,7 @@ $(document).on('click', '.answers', function () {
         incorrectAnswers++
 
     //     // alert incorrect
-        $("#questions").html("<p>Sorry, but the correct answer is " + response[randomQuestion].answers[userAnswer] + ".</p>");
+        $("#questions").html("<p>Sorry, but the correct answer is " + response[randomQuestion].name + ".</p>");
 
         
     //     // draw a new question
